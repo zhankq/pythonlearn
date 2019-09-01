@@ -1,0 +1,11 @@
+## 控制流模块
+
+Python 中不存在 switch 语句。你可以通过使用 if..elif..else 语句来实现同样的事情（在某些情况下，使用一部字典能够更快速地完成）。
+
+
+针对 C/C++/Java/C# 程序员的提示
+Python 中的 for 循环和 C/C++ 中的 for 循环可以说是完全不同。
+C# 程序员会注意到 Python 中的 for 循环与 C# 中的 foreach 循环相似。
+Java 程序员则会注意到它同样与 Java 1.5 中的 for (int i : IntArray) 无甚区别。
+在 C/C++ 中，如果你希望编写 for (int i = 0; i < 5; i++)，那么在 Python 你只需要写下 for i in range(0,5)。
+正如你所看到的，Python 中的 for 循环将更加简单，更具表现力且更不容易出错。
