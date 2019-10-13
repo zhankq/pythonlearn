@@ -16,3 +16,6 @@ except (RuntimeError, TypeError, NameError):
 try except 语句还有一个可选的else子句，
 如果使用这个子句，那么必须放在所有的except子句之后。
 这个子句将在try子句没有发生任何异常的时候执行。例如:
+
+
+以上例子不管 try 子句里面有没有发生异常，finally 子句都会执行。
