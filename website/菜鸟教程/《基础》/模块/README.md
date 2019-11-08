@@ -49,3 +49,51 @@ from modname import *
 
 __name__属性
 
+在一个模块（或者脚本，或者其他地方）
+的最前面使用 import 来导入一个模块，
+当然这只是一个惯例，而不是强制的。
+
+目录只有包含一个叫做 __init__.py 的文件才会被认作是一个包，
+主要是为了避免一些滥俗的名字（比如叫做 string）
+不小心的影响搜索路径中的有效模块。
+
+放一个空的 :file:__init__.py就可以了。
+当然这个文件中也可以包含一些初始化代码或者为（将在后面介绍的） 
+__all__变量赋值。
+
+
+
+sound/                          顶层包
+      __init__.py               初始化 sound 包
+      formats/                  文件格式转换子包
+              __init__.py
+              wavread.py
+              wavwrite.py
+              aiffread.py
+              aiffwrite.py
+              auread.py
+              auwrite.py
+              ...
+      effects/                  声音效果子包
+              __init__.py
+              echo.py
+              surround.py
+              reverse.py
+              ...
+      filters/                  filters 子包
+              __init__.py
+              equalizer.py
+              vocoder.py
+              karaoke.py
+
+import sound.effects.echo
+from sound.effects.item import iitems
+
+from sound.effects import *
+echo.echo_info()
+#item.iitems()
+
+
+无论是隐式的还是显式的相对导入都是从当前模块开始的。
+主模块的名字永远是"__main__"，
+一个Python应用程序的主模块，应当总是使用绝对路径引用。
