@@ -37,3 +37,54 @@ repr()： 产生一个解释器易读的表达形式。
 注意：在第一个例子中, 每列间的空格由 print() 添加。
 
 这个例子展示了字符串对象的 rjust() 方法, 它可以将字符串靠右, 并在左边填充空格。
+
+str.format() 的基本使用如下:
+
+>>> print('{}网址： "{}!"'.format('菜鸟教程', 'www.runoob.com'))
+
+在括号中的数字用于指向传入对象在 format() 中的位置，如下所示：
+
+>>> print('{0} 和 {1}'.format('Google', 'Runoob'))
+Google 和 Runoob
+>>> print('{1} 和 {0}'.format('Google', 'Runoob'))
+Runoob 和 Google
+
+选项 : 和格式标识符可以跟着字段名。 这就允许对值进行更好的格式化
+
+下面的例子将 Pi 保留到小数点后三位：
+
+>>> import math
+>>> print('常量 PI 的值近似为 {0:.3f}。'.format(math.pi))
+常量 PI 的值近似为 3.142。
+
+在 : 后传入一个整数, 可以保证该域至少有这么多的宽度。 用于美化表格时很有用。
+
+>>> table = {'Google': 1, 'Runoob': 2, 'Taobao': 3}
+>>> for name, number in table.items():
+...     print('{0:10} ==> {1:10d}'.format(name, number))
+...
+Google     ==>          1
+Runoob     ==>          2
+Taobao     ==>          3
+
+如果你有一个很长的格式化字符串, 而你不想将它们分开, 那么在格式化时通过变量名而非位置会是很好的事情。
+最简单的就是传入一个字典, 然后使用方括号 [] 来访问键值 :
+
+>>> table = {'Google': 1, 'Runoob': 2, 'Taobao': 3}
+>>> print('Runoob: {0[Runoob]:d}; Google: {0[Google]:d}; Taobao: {0[Taobao]:d}'.format(table))
+Runoob: 2; Google: 1; Taobao: 3
+
+
+也可以通过在 table 变量前使用 ** 来实现相同的功能：
+>>> table = {'Google': 1, 'Runoob': 2, 'Taobao': 3}
+>>> print('Runoob: {Runoob:d}; Google: {Google:d}; Taobao: {Taobao:d}'.format(**table))
+Runoob: 2; Google: 1; Taobao: 3
+
+
+读取键盘输入
+Python提供了 input() 内置函数从标准输入读入一行文本，默认的标准输入是键盘。
+
+input 可以接收一个Python表达式作为输入，并将运算结果返回。
+
+以下实例将字符串写入到文件 foo.txt 中：
+=====
