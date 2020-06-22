@@ -22,13 +22,13 @@ file_name = 'demo.txt'
 #     print(file_obj.read())
 
 
-file_name = 'hello'
+file_name = 'demo5.txt'
 
-try:
-    with open(file_name) as file_obj :
-        print(file_obj.read())
-except FileNotFoundError:
-    print(f'{file_name} 文件不存在~~')
+#try:
+with open(file_name) as file_obj :
+    print(file_obj.read())
+#except FileNotFoundError:
+#    print(f'{file_name} 文件不存在~~')
 
 
 

@@ -16,7 +16,7 @@
 def fn():
     print('Hello fn')
     print(a)
-    print(10/0)
+    #print(10/0)
 
 def fn2():
     print('Hello fn2')
@@ -26,4 +26,8 @@ def fn3():
     print('Hello fn3')
     fn2()
 
-fn3()    
+#try:
+fn3()
+#except:
+#	print('.....')
+

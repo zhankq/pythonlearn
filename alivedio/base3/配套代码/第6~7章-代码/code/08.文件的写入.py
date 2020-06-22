@@ -13,7 +13,7 @@ file_name = 'demo5.txt'
 #   a+
 # with open(file_name , 'w' , encoding='utf-8') as file_obj:
 # with open(file_name , 'r+' , encoding='utf-8') as file_obj:
-with open(file_name , 'x' , encoding='utf-8') as file_obj:
+with open(file_name , 'a' , encoding='utf-8') as file_obj:
     # write()来向文件中写入内容，
     # 如果操作的是一个文本文件的话，则write()需要传递一个字符串作为参数
     # 该方法会可以分多次向文件中写入内容

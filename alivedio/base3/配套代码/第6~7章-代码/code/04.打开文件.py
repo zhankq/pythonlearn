@@ -12,16 +12,16 @@ file_name = 'demo.txt'
 # 在windows系统使用路径时，可以使用/来代替 \
 # 或者可以使用 \\ 来代替 \
 # 或者也可以使用原始字符串
-file_name = 'hello\\demo.txt'
-file_name = r'hello\demo.txt'
+#file_name = 'hello\\demo.txt'
+#file_name = r'hello\demo.txt'
 
 # 表示路径，可以使用..来返回一级目录
-file_name = '../hello/demo.txt'
+#file_name = '../hello/demo.txt'
 
 # 如果目标文件距离当前文件比较远，此时可以使用绝对路径
 # 绝对路径应该从磁盘的根目录开始书写
-file_name = r'C:\Users\lilichao\Desktop\hello.txt'
+#file_name = r'C:\Users\lilichao\Desktop\hello.txt'
 
-# file_obj = open(file_name) # 打开 file_name 对应的文件
+file_obj = open(file_name) # 打开 file_name 对应的文件
 
 # print(file_obj)
