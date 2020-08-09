@@ -1,0 +1,31 @@
+可以使用 flask 命令或者 python 的 -m 开关来运行这个应用。在 运行应用之前，需要在终端里导出 FLASK_APP 环境变量:
+
+$ export FLASK_APP=hello.py
+$ flask run
+ * Running on http://127.0.0.1:5000/
+
+
+外部可见的服务器
+$ flask run --host=0.0.0.0
+
+
+
+调试模式
+
+$ export FLASK_ENV=development
+$ flask run
+
+
+
+============================================
+export FLASK_APP=hello2.py
+export FLASK_ENV=development
+
+flask run --host=0.0.0.0
+============================================
+
+string      （缺省值） 接受任何不包含斜杠的文本
+int         接受正整数
+float       接受正浮点数
+path        类似 string ，但可以包含斜杠
+uuid        接受 UUID 字符串
