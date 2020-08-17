@@ -17,6 +17,9 @@ $ flask run
 
 
 
+
+
+venv/bin/activate
 ============================================
 export FLASK_APP=hello2.py
 export FLASK_ENV=development
@@ -24,8 +27,21 @@ export FLASK_ENV=development
 flask run --host=0.0.0.0
 ============================================
 
+==windows=================================================
+
+venv\Scripts\activate
+set FLASK_APP=hello2.py
+set FLASK_ENV=development
+
+flask run --host=0.0.0.0
+
+
+
 string      （缺省值） 接受任何不包含斜杠的文本
 int         接受正整数
 float       接受正浮点数
 path        类似 string ，但可以包含斜杠
 uuid        接受 UUID 字符串
+
+
+
