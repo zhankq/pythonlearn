@@ -28,8 +28,13 @@ flask run --host=0.0.0.0
 ============================================
 
 ==windows=================================================
-
+python -m venv venv
+激活虚拟环境
 venv\Scripts\activate
+
+安装 Flask
+pip install Flask
+
 set FLASK_APP=hello.py
 set FLASK_ENV=development
 
