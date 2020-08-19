@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+</head>
+<body>
+
+{% if error %}
+  <h1>有误 {{ error }}!</h1>
+{% else %}
+  <h1>Hello, World!</h1>
+{% endif %}
+get参数： {{searchword}}
+<form action="/login" method="post">
+    <input type="text" name="username">
+    <input type="text" name="password">
+    <button type="submit">提交内容</button>
+</form>
+</body>
+</html>

@@ -1,4 +1,4 @@
-from flask import Flask,escape
+from flask import Flask,escape,request,render_template
 app = Flask(__name__)
 
 #@app.route("/")
@@ -32,3 +32,33 @@ def projects():
 @app.route("/about")
 def about():
     return "The about page"
+
+@app.route("/login",methods=["POST","GET"])
+def login():
+    error = None
+    if request.method == "POST":
+        if valid_login(request.form["username"],request.form["password"]):
+            return "good jobs ,username: " + request.form["username"] +" password: "+ request.form["password"]
+        else:
+            error = 'Invalid username/password'
+
+    searchword = request.args.get('key', '')
+    print(searchword)
+
+    return render_template('login.html', error=error,searchword=searchword)
+
+
+
+#################文件上传¶
+
+
+def valid_login(name,pwd):
+    '''
+    :param name:
+    :param pwd:
+    :return:
+    '''
+    if name=="vancekq" and pwd=="123456":
+        return True
+    return False
+
