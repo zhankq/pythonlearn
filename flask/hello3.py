@@ -82,9 +82,16 @@ def login():
 def hello(name=None):
     return render_template('hello.html', name=name)
 '''
+@app.route('/')
+def index():
+    return "Index Page"
 
-with app.test_request_context('/hello', method='POST'):
-    # now you can do something with the request until the
-    # end of the with block, such as basic assertions:
-    assert request.path == '/hello'
-    assert request.method == 'POST'
+@app.route('/upload', methods=['GET', 'POST'])
+def upload_file():
+    if request.method == 'POST':
+        f = request.files['the_file']
+        f.save('uploaded_file.txt')
+
+    return render_template('upload.html')
+
+
