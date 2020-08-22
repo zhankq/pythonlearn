@@ -1,4 +1,4 @@
-from flask import Flask,escape,url_for,request,render_template
+from flask import Flask,escape,url_for,request,render_template,make_response,abort, redirect
 app = Flask(__name__)
 
 '''
@@ -81,10 +81,12 @@ def login():
 @app.route('/hello/<name>')
 def hello(name=None):
     return render_template('hello.html', name=name)
-'''
+
 @app.route('/')
 def index():
     return "Index Page"
+'''
+
 
 @app.route('/upload', methods=['GET', 'POST'])
 def upload_file():
@@ -94,4 +96,38 @@ def upload_file():
 
     return render_template('upload.html')
 
+@app.route('/setcookie')
+def set_cookie():
+    resp = make_response(render_template('upload.html'))
+    resp.set_cookie('username', 'the username value')
+    return resp
 
+@app.route('/getcookie')
+def get_cookie():
+    username = request.cookies.get('username')
+    return username+"--"
+
+@app.route('/')
+def index():
+    return redirect(url_for('login'))
+
+
+@app.route('/login')
+def login():
+    abort(401)
+    this_is_never_executed()
+
+def this_is_never_executed():
+    return 'this_is_never_executed'
+
+'''
+@app.errorhandler(404)
+def page_not_found(error):
+    return render_template('error.html'), 404
+'''
+@app.errorhandler(404)
+def not_found(error):
+    resp = make_response(render_template('error.html'), 404)
+    resp.headers['X-Something'] = 'A value'
+    resp.headers['X-Job'] = 'Jobs'
+    return resp
