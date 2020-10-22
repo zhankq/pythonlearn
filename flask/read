@@ -35,7 +35,7 @@ venv\Scripts\activate
 安装 Flask
 pip install Flask
 
-set FLASK_APP=flashing.py
+set FLASK_APP=render_template.py
 set FLASK_ENV=development
 flask run --host=0.0.0.0
 
