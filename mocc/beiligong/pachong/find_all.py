@@ -4,10 +4,10 @@ url = "http://python123.io/ws/demo.html"
 r=requests.get(url)
 demo = r.text
 
-#demo = "<a id='ss' rel='good' class='fff'>AAA</a>"
+demo = "<div><a id='ss' rel='good' class='fff'>AAA</a></div>"
 
 soup = BeautifulSoup(demo,"html.parser")
-print(demo)
+# print(demo)
 #获取所有的标签名
 # for tag in soup.find_all(True):
 #     print(tag.name)
@@ -18,10 +18,10 @@ print(demo)
 #<>.find_all(name, attrs, recursive, string, **kwargs)
 
 #for tag in soup.find_all(["p","a"],id="link1"):
-# for tag in soup.find_all(id="link1"):
-#      print(tag,'===')
+for tag in soup.find_all('div'):
+     print(tag('a'))
 #s = soup.find_all(["a"],'id')
 
-print(soup.find_all("a"))
+#print(soup.find_all("a"))
 
 #print(s)
