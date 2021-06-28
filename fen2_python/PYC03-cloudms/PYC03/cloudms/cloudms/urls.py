@@ -1,7 +1,7 @@
 """cloudms URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/3.2/topics/http/urls/
+    https://docs.djangoproject.com/en/2.0/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -14,14 +14,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path,include
-from msgapp import views
+from django.urls import include, path
+from msgapp import views as msgviews
 
 urlpatterns = [
-    path("msggate/",include("msgapp.urls")),
-    path("test/",views.test),
-    path("article/<str:year>/",views.article),
+    path('msggate/', include('msgapp.urls')),
+    path('admin/', admin.site.urls),
+    path('', msgviews.homeproc2),
+    path('playground/', msgviews.pgproc)
 
-
-    path('admin/', admin.site.urls)
 ]
